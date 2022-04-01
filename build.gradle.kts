@@ -35,7 +35,7 @@ dependencies {
 }
 
 tasks.jar {
-    manifest.attributes["Main-Class"] = "com.example.MyMainClass"
+    manifest.attributes["Main-Class"] = "com.plcoding.ApplicationKt"
     manifest.attributes["Class-Path"] = configurations
         .runtimeClasspath
         .get()
