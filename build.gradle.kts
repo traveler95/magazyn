@@ -33,3 +33,13 @@ dependencies {
     implementation("org.ktorm:ktorm-core:3.2.0")
     implementation("org.ktorm:ktorm-support-mysql:3.2.0")
 }
+
+tasks.jar {
+    manifest.attributes["Main-Class"] = "com.example.MyMainClass"
+    manifest.attributes["Class-Path"] = configurations
+        .runtimeClasspath
+        .get()
+        .joinToString(separator = " ") { file ->
+            "libs/${file.name}"
+        }
+}
